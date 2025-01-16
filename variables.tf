@@ -45,6 +45,11 @@ variable "name" {
   default = ""
 }
 
+variable "ptr" {
+  type = string
+  default = ""
+}
+
 variable "ptr_name" {
   type        = string
   description = "value"

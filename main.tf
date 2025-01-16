@@ -34,6 +34,6 @@ resource "dns_ptr_record" "this" {
 
   zone = var.zone
   name = var.ptr_name
-  ptr  = var.zone
+  ptr  = var.ptr
   ttl  = 300
 }
