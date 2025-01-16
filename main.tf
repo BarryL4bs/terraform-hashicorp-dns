@@ -6,12 +6,14 @@ resource "dns_a_record_set" "this" {
   ttl       = var.ttl
 }
 
-# resource "dns_aaaa_record_set" "this" {
-#   zone      = var.zone
-#   name      = var.name
-#   addresses = var.addresses
-#   ttl       = var.ttl
-# }
+resource "dns_aaaa_record_set" "this" {
+  count = var.enable_ipv6 ? 1 : 0
+
+  zone      = var.zone
+  name      = var.name
+  addresses = var.ipv6
+  ttl       = var.ttl
+}
 
 # resource "dns_cname_record" "this" {
 #   zone  = var.zone
@@ -27,9 +29,11 @@ resource "dns_a_record_set" "this" {
 #   ttl         = var.ttl
 # }
 
-# resource "dns_ptr_record" "this" {
-#   zone = var.zone
-#   name = "r._dns-sd"
-#   ptr  = "example.com."
-#   ttl  = 300
-# }
+resource "dns_ptr_record" "this" {
+  count = var.enable_ptr ? 1 : 0
+
+  zone = var.zone
+  name = var.ptr_name
+  ptr  = var.zone
+  ttl  = 300
+}

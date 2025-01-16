@@ -5,6 +5,16 @@ variable "cname" {
   default     = null
 }
 
+variable "enable_ipv6" {
+  default = false
+  type    = bool
+}
+
+variable "enable_ptr" {
+  default = false
+  type    = bool
+}
+
 variable "ipv4" {
   type = list(string)
 
@@ -29,6 +39,13 @@ variable "ipv6" {
 
 
 variable "name" {
+  type        = string
+  description = "value"
+
+  default = ""
+}
+
+variable "ptr_name" {
   type        = string
   description = "value"
 
