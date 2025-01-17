@@ -46,7 +46,7 @@ variable "name" {
 }
 
 variable "ptr" {
-  type = string
+  type    = string
   default = ""
 }
 
@@ -54,6 +54,11 @@ variable "ptr_name" {
   type        = string
   description = "value"
 
+  default = ""
+}
+
+variable "ptr_zone" {
+  type = string
   default = ""
 }
 

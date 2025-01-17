@@ -32,7 +32,7 @@ resource "dns_aaaa_record_set" "this" {
 resource "dns_ptr_record" "this" {
   count = var.enable_ptr ? 1 : 0
 
-  zone = var.zone
+  zone = var.ptr_zone
   name = var.ptr_name
   ptr  = var.ptr
   ttl  = 300
