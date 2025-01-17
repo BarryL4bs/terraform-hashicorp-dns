@@ -84,6 +84,7 @@ variable "ttl" {
 variable "zone" {
   type        = string
   description = "DNS zone name"
+  default = ""
 
   validation {
     condition     = endswith(substr(var.zone, -1, -1), ".") || var.zone == null || var.zone == ""
