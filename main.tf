@@ -1,5 +1,7 @@
 
 resource "dns_a_record_set" "this" {
+  count = var.enable_ipv4 ? 1 : 0
+  
   zone      = var.zone
   name      = var.name
   addresses = var.ipv4

@@ -5,6 +5,12 @@ variable "cname" {
   default     = null
 }
 
+variable "enable_ipv4" {
+  default = false
+  type    = bool
+}
+
+
 variable "enable_ipv6" {
   default = false
   type    = bool
