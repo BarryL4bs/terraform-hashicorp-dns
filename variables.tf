@@ -5,6 +5,15 @@ variable "cname" {
   default     = null
 }
 
+variable "cname_name" {
+  type = string  
+}
+
+variable "cname_zone" {
+  type = string  
+}
+
+
 variable "enable_cname" {
   default = false
   type    = bool

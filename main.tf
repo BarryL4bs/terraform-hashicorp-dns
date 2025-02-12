@@ -20,8 +20,8 @@ resource "dns_aaaa_record_set" "this" {
 resource "dns_cname_record" "this" {
   count = var.enable_cname ? 1 : 0
 
-  zone  = var.zone
-  name  = var.name
+  zone  = var.cname_zone
+  name  = var.cname_name
   cname = var.cname
   ttl   = var.ttl
 }
