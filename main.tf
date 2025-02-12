@@ -17,12 +17,14 @@ resource "dns_aaaa_record_set" "this" {
   ttl       = var.ttl
 }
 
-# resource "dns_cname_record" "this" {
-#   zone  = var.zone
-#   name  = var.name
-#   cname = var.cname
-#   ttl   = var.ttl
-# }
+resource "dns_cname_record" "this" {
+  count = var.enable_cname ? 1 : 0
+
+  zone  = var.zone
+  name  = var.name
+  cname = var.cname
+  ttl   = var.ttl
+}
 
 # resource "dns_ns_record_set" "this" {
 #   zone        = var.zone
